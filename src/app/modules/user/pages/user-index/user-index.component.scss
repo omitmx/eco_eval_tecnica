@@ -1,0 +1,42 @@
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+    display: flex; 
+    align-items: center; 
+  }
+  
+  label {
+    display: inline-block; 
+    font-weight: bold;
+    margin-right: 10px; 
+    width: 150px;
+  }
+  
+  input {
+    flex: 1; 
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+    
+  }
+  
+  button {
+    background-color: #ffffff;
+    color: rgb(5, 164, 238);
+    cursor: pointer;
+    padding: 10px 20px; 
+    box-sizing: border-box;
+    margin-left:auto; 
+  }
+
+  

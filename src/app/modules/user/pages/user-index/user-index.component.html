@@ -1,0 +1,73 @@
+<form  [formGroup]="ufrom" (ngSubmit)="enviar()">
+    <div class="form__group">
+      <label for="nombre" >
+      Nombre:
+    </label>
+      <input type="text" id="nombre" [ngClass]="{ 'is__invalid-input': submitted && f['nombre'].errors }"
+      class="peer block" placeholder=" " formControlName="nombre" />
+   
+     
+    </div>
+    <div class="form__group">
+      <label for="email">
+      Correo:
+    </label>
+      <input type="text" id="email" [ngClass]="{ 'is__invalid-input': submitted && f['email'].errors }"
+      class="peer block" placeholder=" " formControlName="email" />
+   
+     
+    </div>
+    <div class="form__group">
+      <label for="telefono">
+      Telefono:
+    </label>
+      <input type="number" id="telefono" [ngClass]="{ 'is__invalid-input': submitted && f['telefono'].errors }"
+      class="peer block" placeholder=" " formControlName="telefono" />
+   
+     
+    </div>
+    
+    <div class="form__group">
+      <label for="fecha">
+      Fecha:
+    </label>
+      
+      <mat-form-field >
+        <input matInput type="text" id="fecha" [ngClass]="{ 'is__invalid-input': submitted && f['fecha'].errors }"
+        [matDatepicker]="picker" formControlName="fecha" readonly />
+        <mat-hint>DD-MMM-YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      
+      </mat-form-field>
+     
+   
+    </div>
+    
+    <div class="form__group">     
+    <label for="ciudad">Ciudad:</label>
+    <input
+      type="text"
+      id="ciudad"
+      [ngClass]="{ 'is__invalid-input': submitted && f['ciudad'].errors }"
+      class="peer block"
+      placeholder="Buscar ciudad"
+      formControlName="ciudad"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let ele of filteredOptions | async" [value]="ele">
+        {{ ele.estado_cd }}
+      </mat-option>
+    </mat-autocomplete>
+    </div>
+    
+    <div>
+        <!-- <button type="submit" mat-raised-button color="primary" [disabled]="ufrom.invalid">Enviar</button> -->
+        <button  
+        mat-raised-button color="primary">
+        Enviar
+      </button>
+    </div>
+  </form>
+  

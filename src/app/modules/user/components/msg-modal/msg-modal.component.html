@@ -1,0 +1,12 @@
+<h3 mat-dialog-title class="mat-dialog-title">
+    CONTACTO
+</h3>
+<div mat-dialog-content>
+    <ul>
+        <li *ngFor="let error of _errors">{{ error }}</li>
+    </ul>
+</div>
+<div mat-dialog-actions class="btnok">
+    <button mat-flat-button  (click)="close()">Cerrar</button>
+    <!-- <button  mat-raised-button color="primary" (click)="close()" class="btnok">OK</button> -->
+</div>
